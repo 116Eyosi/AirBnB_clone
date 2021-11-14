@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-import modules
 import uuid
 from datetime import datetime
 """ a model that defines all common attributes/methods for other classes """
