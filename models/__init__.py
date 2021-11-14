@@ -1,6 +1,5 @@
 #!/usr/bin/python3
-""" BaseModel that defines all common attributes/methods for other classes """
-
+"""__init__ magic method for models directory"""
 from models.engine.file_storage import FileStorage
 
 
