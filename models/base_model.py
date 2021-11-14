@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+import models
 from uuid import uuid4
 from datetime import datetime
 """ a model that defines all common attributes/methods for other classes """
@@ -14,7 +15,7 @@ class BaseModel:
         if len(kwargs) != 0:
             strtime = "%Y- %m-%dT%H:%M:%S.%f"
             for key, value in kwargs.items():
-                if key in ["created_at", "updated_at"]:
+                if key == "created_at" or key == "updated_at":
                     self.__dict__[key] = datetime.strptime(value, strtime)
                 else:
                     self.__dict__[key] = value
@@ -29,7 +30,7 @@ class BaseModel:
     def to_dict(self):
         """ returns a dictionary containing all keys/values"""
         kdict = self.__dict__.copy()
-        kdict["__class__"] = type(self).__name__
+        kdict["__class__"] = self.__class__.__name__
         kdict["created_at"] = self.created_at.isoformat()
         kdict["updated_at"] = self.updated_at.isoformat()
         return kdict
