@@ -1,17 +1,17 @@
 #!/usr/bin/python3
 from uuid import uuid4
-import datetime
+from datetome import datetime
 """ a model that defines all common attributes/methods for other classes """
 
 
 class BaseModel:
     """ simple class with name BaseModel for this project"""
-    def __init__(self, *arg, **kwargs):
+    '''def __init__(self, *arg, **kwargs):
         """ Initialize instance"""
         self.id = str(uuid4())
         self.created_at = datetime.today()
         self.updated_at = datetime.today()
-        '''if len(kwargs) != 0:
+        if len(kwargs) != 0:
             strtime = "%Y- %m-%dT%H:%M:%S.%f"
             for key, value in kwargs.items():
                 if key == "created_at" or key == "updated_at":
