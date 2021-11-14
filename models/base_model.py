@@ -37,4 +37,4 @@ class BaseModel:
 
     def __str__(self):
         """ prints [<class name>] (<self.id>) <self.__dict__> """
-        return "[{type(self).__name__}] ({self.id}) {seld.__dict__}"
+        return f"[{type(self).__name__}] ({self.id}) {seld.__dict__}"
