@@ -29,7 +29,7 @@ class BaseModel:
     def to_dict(self):
         """ returns a dictionary containing all keys/values"""
         kdict = self.__dict__.copy()
-        kdict["__class__"] = self.__class__.__name__
+        kdict["__class__"] = type(self).__name__
         kdict["created_at"] = self.created_at.isoformat()
         kdict["updated_at"] = self.updated_at.isoformat()
         return kdict
